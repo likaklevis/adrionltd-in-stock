@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Adrionltd In-Stock Filter",
+    "version": "1.0.0",
+    "author": "KLIKA",
+    "description": "Automatically keeps the in-stock filter enabled on adrionltd.com.",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "adrionltd-in-stock@klika",
+            "data_collection_permissions": {
+                "required": [
+                    "none"
+                ]
+            }
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://adrionltd.com/*",
+                "*://www.adrionltd.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
